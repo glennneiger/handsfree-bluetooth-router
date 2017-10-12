@@ -12,9 +12,12 @@
 		41263DD21F8FEDDC00A79CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41263DD01F8FEDDC00A79CF6 /* Main.storyboard */; };
 		41263DD41F8FEDDC00A79CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41263DD31F8FEDDC00A79CF6 /* Assets.xcassets */; };
 		41263DD71F8FEDDC00A79CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41263DD51F8FEDDC00A79CF6 /* LaunchScreen.storyboard */; };
+		86D1DAD2F6C68B0E809FEACF /* Pods_HandsfreeBluetoothRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F4AA732E29F3F3BA1FEA84 /* Pods_HandsfreeBluetoothRouter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EFA33D4DFFFECAA60B379B9 /* Pods-HandsfreeBluetoothRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandsfreeBluetoothRouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-HandsfreeBluetoothRouter/Pods-HandsfreeBluetoothRouter.release.xcconfig"; sourceTree = "<group>"; };
+		247FC210340CD091A3CDE603 /* Pods-HandsfreeBluetoothRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandsfreeBluetoothRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HandsfreeBluetoothRouter/Pods-HandsfreeBluetoothRouter.debug.xcconfig"; sourceTree = "<group>"; };
 		41263DC91F8FEDDC00A79CF6 /* HandsfreeBluetoothRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandsfreeBluetoothRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41263DCC1F8FEDDC00A79CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41263DCE1F8FEDDC00A79CF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		41263DD31F8FEDDC00A79CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41263DD61F8FEDDC00A79CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41263DD81F8FEDDC00A79CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90F4AA732E29F3F3BA1FEA84 /* Pods_HandsfreeBluetoothRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandsfreeBluetoothRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D1DAD2F6C68B0E809FEACF /* Pods_HandsfreeBluetoothRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				41263DCB1F8FEDDC00A79CF6 /* HandsfreeBluetoothRouter */,
 				41263DCA1F8FEDDC00A79CF6 /* Products */,
+				73CD94E994EA5929559A8CD4 /* Pods */,
+				DE363E777BB9641C1C1D202C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = HandsfreeBluetoothRouter;
 			sourceTree = "<group>";
 		};
+		73CD94E994EA5929559A8CD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				247FC210340CD091A3CDE603 /* Pods-HandsfreeBluetoothRouter.debug.xcconfig */,
+				0EFA33D4DFFFECAA60B379B9 /* Pods-HandsfreeBluetoothRouter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE363E777BB9641C1C1D202C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90F4AA732E29F3F3BA1FEA84 /* Pods_HandsfreeBluetoothRouter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41263DDB1F8FEDDC00A79CF6 /* Build configuration list for PBXNativeTarget "HandsfreeBluetoothRouter" */;
 			buildPhases = (
+				CFBCF0B9F6642121A0DE3F0E /* [CP] Check Pods Manifest.lock */,
 				41263DC51F8FEDDC00A79CF6 /* Sources */,
 				41263DC61F8FEDDC00A79CF6 /* Frameworks */,
 				41263DC71F8FEDDC00A79CF6 /* Resources */,
+				C414A9CE9CE6DEAE9E87B612 /* [CP] Embed Pods Frameworks */,
+				28D391EB345EA25B2E2E1893 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28D391EB345EA25B2E2E1893 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HandsfreeBluetoothRouter/Pods-HandsfreeBluetoothRouter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C414A9CE9CE6DEAE9E87B612 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HandsfreeBluetoothRouter/Pods-HandsfreeBluetoothRouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFBCF0B9F6642121A0DE3F0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HandsfreeBluetoothRouter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41263DC51F8FEDDC00A79CF6 /* Sources */ = {
@@ -272,6 +350,7 @@
 		};
 		41263DDC1F8FEDDC00A79CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247FC210340CD091A3CDE603 /* Pods-HandsfreeBluetoothRouter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +365,7 @@
 		};
 		41263DDD1F8FEDDC00A79CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFA33D4DFFFECAA60B379B9 /* Pods-HandsfreeBluetoothRouter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
