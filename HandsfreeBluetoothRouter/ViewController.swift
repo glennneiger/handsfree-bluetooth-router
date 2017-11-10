@@ -15,25 +15,29 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var connectingLabel: UILabel!
+    var audioSession = AVAudioSession()
+    
+    @IBAction func refresh(_ sender: Any) {
+        loadRouteInfo()
+    }
+    @IBAction func disconnect(_ sender: Any) {
+        do {
+        try audioSession.setActive(false)
+        } catch {}
+        connectingLabel.text = "Disconnected"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let sharedAudioSession = AVAudioSession.sharedInstance()
-        
-        scrollView.backgroundColor = UIColor.clear
-//        let volumeView = MPVolumeView(frame: scrollView.bounds)
-        
-//        self.scrollView.addSubview(volumeView)
-        
-        let audioSession = AVAudioSession()
+    }
+    
+    func loadRouteInfo() {
+        connectingLabel.text = "No Hands Free Device"
+        audioSession = AVAudioSession()
         
         do {
-//            try audioSession.setCategory(AVAudioSessionCategoryRecord)
-//            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
             try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [AVAudioSessionCategoryOptions.allowBluetooth, .mixWithOthers])
-            
-            try sharedAudioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .mixWithOthers)
         } catch {
             print("error")
         }
@@ -46,9 +50,9 @@ class ViewController: UIViewController {
                 ports.append("Port Type: \(input.portType)\n\n")
                 if(input.portType == "BluetoothHFP") {
                     do {
+                        connectingLabel.text = "Connected"
                         try audioSession.setPreferredInput(input)
                         try audioSession.setActive(true)
-//                        try audioSession.setActive(false)
                     } catch {
                         print("more of them")
                     }
@@ -58,22 +62,12 @@ class ViewController: UIViewController {
             print(ports)
             label.text = ports
         }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        if let outputs = audioSession.outputDataSources {
-            print("outputs")
-            for out in outputs {
-                print(out.dataSourceName)
-                print(out.location)
-                print(out.dataSourceID)
-            }
-        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 

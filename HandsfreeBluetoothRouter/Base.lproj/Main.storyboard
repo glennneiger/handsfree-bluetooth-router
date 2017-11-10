@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,28 +23,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeP-c1-nl2">
-                                <rect key="frame" x="16" y="341" width="343" height="306"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHK-4m-VPz">
+                                <rect key="frame" x="158" y="429" width="59" height="30"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBG-CK-dql"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcT-Tq-vbe">
+                                <rect key="frame" x="148" y="483" width="78" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="306" id="qHA-3d-PSM"/>
+                                    <constraint firstAttribute="height" constant="30" id="sZa-ZX-BWC"/>
                                 </constraints>
-                            </scrollView>
+                                <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="disconnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="krU-VK-Ku1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwv-Sk-mA5">
+                                <rect key="frame" x="187" y="509" width="0.0" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="inX-Wo-T7d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rcT-Tq-vbe" firstAttribute="top" secondItem="hHK-4m-VPz" secondAttribute="bottom" constant="24" id="1w9-Ea-Knh"/>
+                            <constraint firstItem="Uwv-Sk-mA5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2ze-ZK-by1"/>
+                            <constraint firstItem="hHK-4m-VPz" firstAttribute="top" secondItem="Bd6-7q-4sK" secondAttribute="bottom" constant="96" id="4Ng-cg-BiP"/>
                             <constraint firstItem="Bd6-7q-4sK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Nu-MK-CBf"/>
+                            <constraint firstItem="rcT-Tq-vbe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Btm-Rf-muN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bd6-7q-4sK" secondAttribute="trailing" constant="16" id="PvN-zd-0Xf"/>
                             <constraint firstItem="Bd6-7q-4sK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VJE-XW-qNE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bd6-7q-4sK" secondAttribute="bottom" constant="334" id="atR-0O-nzx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aeP-c1-nl2" secondAttribute="trailing" constant="16" id="eHj-oC-SNL"/>
-                            <constraint firstItem="aeP-c1-nl2" firstAttribute="top" secondItem="Bd6-7q-4sK" secondAttribute="bottom" constant="8" id="fnE-Mk-MD8"/>
-                            <constraint firstItem="aeP-c1-nl2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yRk-zS-Zcn"/>
+                            <constraint firstItem="Uwv-Sk-mA5" firstAttribute="top" secondItem="hHK-4m-VPz" secondAttribute="bottom" constant="50" id="ggh-Cv-zyO"/>
+                            <constraint firstItem="hHK-4m-VPz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wfc-F4-XRz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="connectingLabel" destination="Uwv-Sk-mA5" id="9XY-u6-PoG"/>
                         <outlet property="label" destination="Bd6-7q-4sK" id="vGM-Un-u2h"/>
-                        <outlet property="scrollView" destination="aeP-c1-nl2" id="qCJ-QM-GGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
