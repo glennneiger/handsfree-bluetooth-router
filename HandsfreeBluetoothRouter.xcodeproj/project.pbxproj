@@ -354,7 +354,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AEL9Z6F99W;
 				INFOPLIST_FILE = HandsfreeBluetoothRouter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gardenwalker.HandsfreeBluetoothRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,7 +371,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AEL9Z6F99W;
 				INFOPLIST_FILE = HandsfreeBluetoothRouter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gardenwalker.HandsfreeBluetoothRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
