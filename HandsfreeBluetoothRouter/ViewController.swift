@@ -25,8 +25,8 @@ class ViewController: UIViewController {
         audioSession = AVAudioSession.sharedInstance()
         
         do {
-//            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [AVAudioSessionCategoryOptions.allowBluetooth])
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, mode: AVAudioSessionModeDefault, routeSharingPolicy: .longForm, options: [AVAudioSessionCategoryOptions.allowBluetooth])
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.allowBluetooth, .mixWithOthers, .allowAirPlay])
+            
         } catch {
             
         }
@@ -45,16 +45,22 @@ class ViewController: UIViewController {
         } catch {
             
         }
-        var text = ""
+
+//        let currentRoute = audioSession.currentRoute
+        var text = "Current Route: \(audioSession.currentRoute)\n\n"
         let inputs = audioSession.availableInputs
         inputs?.forEach({ portDesc in
-            if portDesc.portType == AVAudioSessionPortBluetoothHFP {
-                do {
-                    try audioSession.setPreferredInput(portDesc)
-                } catch {}
-            }
-            text.append("Port Type: \(portDesc.portType)\n")
+            text.append("Port Desc: \(portDesc) \n\n")
         })
+        
+        let modes = audioSession.availableModes
+        text.append("Current Mode: \(audioSession.mode)\n\n")
+        text.append("Available Modes: \n")
+        modes.forEach { mode in
+            text.append("Mode: \(mode)\n")
+        }
+        
+        
         textArea.text = text
         
         
