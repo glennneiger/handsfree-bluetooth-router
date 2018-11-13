@@ -20,18 +20,35 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqo-YA-PmH">
                                 <rect key="frame" x="192" y="742" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="asE-Nu-XFm"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5K8-Bi-ahD">
+                                <rect key="frame" x="87" y="140" width="240" height="390"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jqo-YA-PmH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4vm-Jp-sI8"/>
+                            <constraint firstItem="5K8-Bi-ahD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="6jj-nR-Phz"/>
+                            <constraint firstItem="5K8-Bi-ahD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="AbC-f8-2ux"/>
+                            <constraint firstItem="jqo-YA-PmH" firstAttribute="top" secondItem="5K8-Bi-ahD" secondAttribute="bottom" constant="212" id="RYY-cy-0BT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5K8-Bi-ahD" secondAttribute="trailing" constant="87" id="vuw-fG-i1L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jqo-YA-PmH" secondAttribute="bottom" constant="90" id="yes-k6-PnP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textArea" destination="5K8-Bi-ahD" id="7vk-qz-iBY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
