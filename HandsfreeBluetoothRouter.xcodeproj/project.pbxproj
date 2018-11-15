@@ -13,6 +13,8 @@
 		41263DD41F8FEDDC00A79CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41263DD31F8FEDDC00A79CF6 /* Assets.xcassets */; };
 		41263DD71F8FEDDC00A79CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41263DD51F8FEDDC00A79CF6 /* LaunchScreen.storyboard */; };
 		86D1DAD2F6C68B0E809FEACF /* Pods_HandsfreeBluetoothRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F4AA732E29F3F3BA1FEA84 /* Pods_HandsfreeBluetoothRouter.framework */; };
+		DF9028C6219CEA4500D0FF1B /* Guitar1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF9028C5219CEA4500D0FF1B /* Guitar1.mp3 */; };
+		DFB8F04B219DF9520095D99E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFB8F04A219DF9520095D99E /* silence.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		41263DD61F8FEDDC00A79CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41263DD81F8FEDDC00A79CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F4AA732E29F3F3BA1FEA84 /* Pods_HandsfreeBluetoothRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandsfreeBluetoothRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9028C5219CEA4500D0FF1B /* Guitar1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guitar1.mp3; sourceTree = SOURCE_ROOT; };
+		DFB8F04A219DF9520095D99E /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 		41263DCB1F8FEDDC00A79CF6 /* HandsfreeBluetoothRouter */ = {
 			isa = PBXGroup;
 			children = (
+				DF9028C5219CEA4500D0FF1B /* Guitar1.mp3 */,
+				DFB8F04A219DF9520095D99E /* silence.mp3 */,
 				41263DCC1F8FEDDC00A79CF6 /* AppDelegate.swift */,
 				41263DCE1F8FEDDC00A79CF6 /* ViewController.swift */,
 				41263DD01F8FEDDC00A79CF6 /* Main.storyboard */,
@@ -155,8 +161,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB8F04B219DF9520095D99E /* silence.mp3 in Resources */,
 				41263DD71F8FEDDC00A79CF6 /* LaunchScreen.storyboard in Resources */,
 				41263DD41F8FEDDC00A79CF6 /* Assets.xcassets in Resources */,
+				DF9028C6219CEA4500D0FF1B /* Guitar1.mp3 in Resources */,
 				41263DD21F8FEDDC00A79CF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,9 +13,11 @@ import AVKit
 class ViewController: UIViewController {
 
     var audioSession: AVAudioSession!
-    
+    var audioPlayer: AVAudioPlayer!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         let myRoutePickerView = AVRoutePickerView()
         myRoutePickerView.frame = CGRect(x: 20, y: 20, width: 50, height: 50)
@@ -25,7 +27,18 @@ class ViewController: UIViewController {
         audioSession = AVAudioSession.sharedInstance()
         
         do {
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.allowBluetooth, .mixWithOthers, .allowAirPlay])
+
+
+
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord,
+                                         mode: AVAudioSessionModeSpokenAudio,
+                                         options: [.allowBluetooth, .mixWithOthers, .allowBluetoothA2DP])
+            do {
+                try audioSession.setActive(true)
+            } catch {
+                print("oh geeze")
+            }
+
             
         } catch {
             
@@ -33,35 +46,34 @@ class ViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     @IBAction func play(_ sender: Any) {
+        
+        let url = Bundle.main.url(forResource: "silence", withExtension: "mp3")!
         do {
-        try audioSession.setActive(true)
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
         } catch {
-            
+            print(error.localizedDescription)
         }
-
+        
 //        let currentRoute = audioSession.currentRoute
-        var text = "Current Route: \(audioSession.currentRoute)\n\n"
-        let inputs = audioSession.availableInputs
-        inputs?.forEach({ portDesc in
-            text.append("Port Desc: \(portDesc) \n\n")
-        })
-        
-        let modes = audioSession.availableModes
-        text.append("Current Mode: \(audioSession.mode)\n\n")
-        text.append("Available Modes: \n")
-        modes.forEach { mode in
-            text.append("Mode: \(mode)\n")
-        }
-        
-        
-        textArea.text = text
+//        var text = "Current Route: \(audioSession.currentRoute)\n\n"
+//        let inputs = audioSession.availableInputs
+//        inputs?.forEach({ portDesc in
+//            text.append("Port Desc: \(portDesc) \n\n")
+//        })
+//
+//        let modes = audioSession.availableModes
+//        text.append("Current Mode: \(audioSession.mode)\n\n")
+//        text.append("Available Modes: \n")
+//        modes.forEach { mode in
+//            text.append("Mode: \(mode)\n")
+//        }
+//
+//
+//        textArea.text = text
         
         
         
