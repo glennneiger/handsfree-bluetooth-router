@@ -5,7 +5,6 @@
 //  Created by Ryan Walker on 10/12/17.
 //  Copyright © 2017 Ryan Walker. All rights reserved.
 //
-
 import UIKit
 import AVFoundation
 import AVKit
@@ -17,37 +16,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view, typically from a nib.
         let myRoutePickerView = AVRoutePickerView()
-        myRoutePickerView.frame = CGRect(x: 20, y: 20, width: 50, height: 50)
+        myRoutePickerView.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
         myRoutePickerView.delegate = self
         self.view.addSubview(myRoutePickerView)
+        self.view.backgroundColor = UIColor.rgb(red: 24, green: 30, blue: 84)
         
         audioSession = AVAudioSession.sharedInstance()
         
         do {
-
-
-
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord,
-                                         mode: AVAudioSessionModeSpokenAudio,
-                                         options: [.allowBluetooth, .mixWithOthers, .allowBluetoothA2DP])
-            do {
-                try audioSession.setActive(true)
-            } catch {
-                print("oh geeze")
-            }
-
-            
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.allowBluetooth, .mixWithOthers, .allowBluetoothA2DP])
+            try audioSession.setActive(true)
         } catch {
-            
+            print(error.localizedDescription)
         }
-        
     }
 
     @IBAction func play(_ sender: Any) {
-        
         let url = Bundle.main.url(forResource: "silence", withExtension: "mp3")!
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
@@ -57,33 +44,20 @@ class ViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
-        
-//        let currentRoute = audioSession.currentRoute
-//        var text = "Current Route: \(audioSession.currentRoute)\n\n"
-//        let inputs = audioSession.availableInputs
-//        inputs?.forEach({ portDesc in
-//            text.append("Port Desc: \(portDesc) \n\n")
-//        })
-//
-//        let modes = audioSession.availableModes
-//        text.append("Current Mode: \(audioSession.mode)\n\n")
-//        text.append("Available Modes: \n")
-//        modes.forEach { mode in
-//            text.append("Mode: \(mode)\n")
-//        }
-//
-//
-//        textArea.text = text
-        
-        
-        
-        
-        
     }
     
     @IBOutlet weak var textArea: UITextView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+}
 
+extension UIColor {
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+    }
 }
 
 extension ViewController: AVRoutePickerViewDelegate {
